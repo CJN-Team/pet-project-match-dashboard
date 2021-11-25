@@ -8,6 +8,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Pet.Project.Match.Dashboard.Api/Pet.Project.Match.Dashboard.Api.csproj", "Pet.Project.Match.Dashboard.Api/"]
+COPY ["Pet.Project.Match.Dashboard.Domain/Pet.Project.Match.Dashboard.Domain.csproj", "Pet.Project.Match.Dashboard.Domain/"]
+COPY ["Pet.Project.Match.Dashboard.Infraestructure/Pet.Project.Match.Dashboard.Infraestructure.csproj", "Pet.Project.Match.Dashboard.Infraestructure/"]
 RUN dotnet restore "Pet.Project.Match.Dashboard.Api/Pet.Project.Match.Dashboard.Api.csproj"
 COPY . .
 WORKDIR "/src/Pet.Project.Match.Dashboard.Api"
